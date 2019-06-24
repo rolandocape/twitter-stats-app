@@ -1,0 +1,83 @@
+.stats-container {
+  display: flex;
+  flex-direction: row;
+  height: 900px;
+}
+
+.tweets-stream {
+  flex: 70%;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.tables-section {
+  flex: 30%;
+  flex-direction: column;
+  margin: 20px 20px 0 20px;
+  overflow: scroll;
+}
+
+.tweets-container {
+  overflow: scroll;
+  margin-top: 20px;
+  border: 1px solid gray;
+  height: 800px;
+}
+
+.input-container {
+  display: flex;
+}
+
+.input-style {
+  margin-right: 10px;
+}
+
+.tweet {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid lightgray;
+  border-width: 0px 1px 1px 1px;
+  cursor: pointer;
+}
+
+.image {
+  width: 48px;
+  margin: 0.5em;
+  padding: 0;
+  display: block;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.name-time {
+  font-weight: bold;
+}
+
+.username {
+  color: gray;
+}
+
+.tweet-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.text {
+  display: block;
+}
+
+.no-results {
+  align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+

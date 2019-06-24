@@ -1,0 +1,12 @@
+<table class="table table-hover">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">{{header}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of stats | keyvalue">
+    <td>{{ requireKeyChange ? fieldsNames[item.key] : item.key}}: {{ item.value }}</td>
+  </tr>
+  </tbody>
+</table>

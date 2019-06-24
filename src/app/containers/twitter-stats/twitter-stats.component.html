@@ -1,0 +1,40 @@
+<div class="stats-container">
+  <div class="tweets-stream">
+    <div class="input-container">
+      <input #searchBox
+             id="search-box"
+             class="form-control input-style"
+             placeholder="Search Tweets by Hashtag"
+             (keyup)="search($event, searchBox.value)"/>
+      <button type="button" class="btn btn-dark" *ngIf="searchTrigered" (click)="clearSearchResults()">
+        Clear Results
+      </button>
+    </div>
+    <div *ngIf="tweets.length" class="tweets-container">
+      <div *ngFor="let tweet of tweets" class="tweet" (click)="navigateToUser(tweet.id)">
+        <div class="image">
+          <img src="{{tweet.user.profile_image_url}}" width="48" height="48">
+        </div>
+        <div class="data-container">
+          <div class="tweet-header">
+             <b class="name-time">{{tweet.user.name}}</b>
+             <span class="username">{{tweet.user.screen_name}}</span>
+             <b class="name-time">{{tweet.created_at | date:'medium'}}</b>
+          </div>
+          <div class="text">{{tweet.text}}</div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!tweets.length" class="tweets-container">
+      <div class="no-results">No Results</div>
+    </div>
+  </div>
+  <div class="tables-section">
+    <app-stats-board [stats]="counters" [header]="'Tweets Counter'" [requireKeyChange]="true"></app-stats-board>
+    <app-stats-board [stats]="calculatedStats" [header]="'Generated Stats'" [requireKeyChange]="true"></app-stats-board>
+    <app-stats-board [stats]="stats.topHashtags" [header]="'Most Used Hashtags'"></app-stats-board>
+    <app-stats-board [stats]="stats.topDomains" [header]="'Most Used Domains'"></app-stats-board>
+    <app-stats-board [stats]="stats.topEmojis" [header]="'Most Used Emojis'"></app-stats-board>
+  </div>
+</div>
+
